@@ -1,7 +1,8 @@
 <div class="card">
-    <img src={{product.images.primary.large}} alt="Product picture" style="width:100%">
+    <img src={{product.images.primary.large}} alt="Product picture">
     <h1>{{product.general.name}}</h1>
     <p class="brand">Brand: {{product.brand.name}}</p>
     <p class="identity">{{product.id}}</p>
+    <div [innerHTML]=product.general.description></div>
     <p><button>Add to Cart</button></p>
   </div> 

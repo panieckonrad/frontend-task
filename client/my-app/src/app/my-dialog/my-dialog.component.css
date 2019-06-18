@@ -1,6 +1,7 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    max-height: 900px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -15,7 +16,7 @@
   .card button {
     border: none;
     outline: 0;
-    padding: 12px;
+    padding: 24px;
     color: white;
     background-color: #FF69B4;
     text-align: center;
@@ -26,4 +27,9 @@
   
   .card button:hover {
     opacity: 0.7;
+  }
+
+  img{
+      width:50%;
+      height:30%
   }
