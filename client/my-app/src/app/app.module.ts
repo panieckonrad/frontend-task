@@ -8,15 +8,17 @@ import {HttpClientModule} from '@angular/common/http';
 import {freeApiService} from 'src/services/freeapi.service';
 
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
-  MatSortModule, MatTableModule } from "@angular/material";
+  MatSortModule, MatTableModule, MatDialogModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyTableComponent } from './my-table/my-table.component';
 import {MatButtonModule} from '@angular/material';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyTableComponent,
+    MyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +30,12 @@ import {MatButtonModule} from '@angular/material';
     MatSortModule,  // sortable headers
     MatTableModule, 
     BrowserAnimationsModule,
-    MatButtonModule 
+    MatButtonModule,
+    MatDialogModule 
 
+  ],
+  entryComponents:[
+    MyDialogComponent,
   ],
   providers: [freeApiService], // it is available to all the components in the app
   bootstrap: [AppComponent]

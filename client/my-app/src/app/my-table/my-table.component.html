@@ -12,7 +12,7 @@
        <!-- Picture Column -->
     <ng-container matColumnDef="picture">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Picture</th>
-        <td mat-cell *matCellDef="let row"><img width = 200 height = 200 src ={{row.images.primary.large}}/></td>
+        <td mat-cell *matCellDef="let row" (click) = "openDialog(dataSource.filteredData.indexOf(row))" ><img width = 200 height = 200 src ={{row.images.primary.large}}/></td>
     </ng-container>
 
     <!-- Id Column -->

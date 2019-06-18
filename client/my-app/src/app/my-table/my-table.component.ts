@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTable } from '@angular/material';
-import {MatButtonModule} from '@angular/material';
 import { MyTableDataSource } from './my-table-datasource'; // My own table data source, didnt workout but keeping for future.
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource,MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import {freeApiService} from 'src/services/freeapi.service';
 import {Product} from '../classes/product'
+import {MyDialogComponent} from 'src/app/my-dialog/my-dialog.component'
+
 
 @Component({
   selector: 'my-table',
@@ -18,7 +19,7 @@ export class MyTableComponent implements AfterViewInit, OnInit {
   prod: Product[];
   dataSource = new MatTableDataSource(this.prod); // datasource is empty
 
-  constructor(private _freeApiService: freeApiService){}
+  constructor(private _freeApiService: freeApiService ,public dialog: MatDialog){}
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['picture','id', 'name' ,'actions'];
@@ -46,6 +47,15 @@ export class MyTableComponent implements AfterViewInit, OnInit {
     this.dataSource.filter = value.trim().toLocaleLowerCase(); // filter by id
   }
 
+  openDialog(index: any): void { // index : this.dataSource.data[index]
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      data: {product: this.dataSource.data[index], } // product injected to our dialog
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed'+ this.dataSource.data[index].id);
+    });
+  }
 
 
 }
