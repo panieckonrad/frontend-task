@@ -17,7 +17,7 @@ export class freeApiService // service in which we are injecting our components
     }
 
     searchProduct(value:string){
-        return this.httpclient.get<Product[]>(this.ROOT_URL+'/products?_limit='+this.maxlimit+'&q='+value) // return whole database of products GET
+        return this.httpclient.get<Product[]>(this.ROOT_URL+'/products?_limit='+this.maxlimit+'&q='+value) // return query of products GET
     }
 
 

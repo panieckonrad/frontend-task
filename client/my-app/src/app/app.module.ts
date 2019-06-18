@@ -11,6 +11,7 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
   MatSortModule, MatTableModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyTableComponent } from './my-table/my-table.component';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { MyTableComponent } from './my-table/my-table.component';
     MatProgressSpinnerModule, 
     MatSortModule,  // sortable headers
     MatTableModule, 
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    MatButtonModule 
+
   ],
   providers: [freeApiService], // it is available to all the components in the app
   bootstrap: [AppComponent]
